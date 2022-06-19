@@ -1,4 +1,4 @@
-let a = 'rock',b = 'paper',c= 'scissors';
+const a = 'rock',b = 'paper',c= 'scissors';
 // let comp = 0;
 // let player = 0;
 
