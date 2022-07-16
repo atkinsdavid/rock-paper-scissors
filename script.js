@@ -20,10 +20,8 @@ function computerPlay(){
 }
 
 function playRound(playerSelection, computerSelection){
-    if (playScore ===5) {
-        winner.textContent = "You win!!!";
-    } else if (compScore === 5) {
-        winner.textContent = "You lose!!!";
+    if (playScore === 5 || compScore === 5) {
+        return;
     } else {
         if (playerSelection === computerSelection){
             round.textContent = 'Draw';
@@ -50,6 +48,11 @@ function playRound(playerSelection, computerSelection){
         };
         player.textContent = playScore;
         computer.textContent = compScore;
+    };
+    if (playScore ===5) {
+        winner.textContent = "You win!!!";
+    } else if (compScore === 5) {
+        winner.textContent = "You lose!!!";
     };
 };
 
