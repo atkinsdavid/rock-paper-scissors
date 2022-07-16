@@ -65,6 +65,8 @@ function game() {
 function resetGame() {
     compScore = 0;
     playScore = 0;
+    player.textContent = playScore;
+    computer.textContent = compScore;
     round.textContent = "(click a button to start)";
     winner.textContent = "(first to 5 wins)";
 }
