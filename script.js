@@ -1,11 +1,17 @@
 const a = 'rock',b = 'paper',c= 'scissors';
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.play_button');
 const round = document.getElementById('round');
 const player = document.getElementById('player');
 const computer = document.getElementById('computer');
 const winner = document.getElementById('winner');
+const reset = document.getElementById('reset');
 let compScore = 0;
 let playScore = 0;
+
+round.textContent = "(click a button to start)";
+player.textContent = playScore;
+computer.textContent = compScore;
+winner.textContent = "(first to 5 wins)";
 
 function computerPlay(){
     const options = [a,b,c]
@@ -47,10 +53,19 @@ function playRound(playerSelection, computerSelection){
     };
 };
 
-function game(e) {
+function game() {
     let playerSelection = this.id;
     const computerSelection = computerPlay();
     playRound(playerSelection,computerSelection);
 };
 
+function resetGame() {
+    compScore = 0;
+    playScore = 0;
+    round.textContent = "(click a button to start)";
+    winner.textContent = "(first to 5 wins)";
+}
+
 buttons.forEach(button => button.addEventListener('click', game));
+
+reset.addEventListener('click',resetGame);
